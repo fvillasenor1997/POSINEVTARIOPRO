@@ -26,8 +26,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          # Usa una versión de Flutter reciente y estable
-          flutter-version: '3.22.2' 
+          flutter-version: '3.22.2' # Versión estable y reciente
 
       # Obtiene las dependencias de Flutter.
       - run: flutter pub get

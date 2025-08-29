@@ -26,14 +26,15 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.10.5' # You can change this to your desired version
-      # Get flutter dependencies.
+          flutter-version: '3.22.0' # O una versión más reciente
+
+      # Obtiene las dependencias de Flutter.
       - run: flutter pub get
 
-      # Check for any formatting issues in the code.
+      # Revisa si hay problemas de formato en el código.
       - run: flutter analyze
 
-      # Run widget tests for our flutter project.
+      # Ejecuta las pruebas de widgets para nuestro proyecto de Flutter.
       - run: flutter test
 
       - run: flutter build apk

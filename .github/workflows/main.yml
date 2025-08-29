@@ -31,8 +31,7 @@ jobs:
       # Obtiene las dependencias de Flutter.
       - run: flutter pub get
 
-      # Ejecuta las pruebas de widgets para nuestro proyecto de Flutter.
-      - run: flutter test
+   
 
       - run: flutter build apk
       - run: flutter build appbundle

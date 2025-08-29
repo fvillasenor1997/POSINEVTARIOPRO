@@ -7,13 +7,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart'; // Importa Riverpod
 import 'package:point_of_sale_system/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    // Envuelve MyApp con ProviderScope
+    await tester.pumpWidget(ProviderScope(child: const MyApp()));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

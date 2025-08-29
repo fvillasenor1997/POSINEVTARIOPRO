@@ -10,24 +10,10 @@ import 'backend/api_config.dart';
 import 'model/delivery_charge_model.dart';
 import 'screens/users/poslogin.dart';
 
-final OutletApiService apiService = OutletApiService(baseUrl: apiBaseUrl);
 
+final OutletApiService apiService = OutletApiService(baseUrl: apiBaseUrl);
 void main() async {
-  // ¡Esta es la línea que soluciona el problema!
   WidgetsFlutterBinding.ensureInitialized();
-
-  await _initializeHive();
-  Hive.registerAdapter(DiscountModelAdapter()); // Register the adapter
-  Hive.registerAdapter(ServiceChargeModelAdapter()); // Register the new model
-  Hive.registerAdapter(DeliveryChargeModelAdapter());
-  Hive.registerAdapter(PackingChargeModelAdapter());
-
-  await _loadData();
-  runApp(const MyApp());
-}
-
-final OutletApiService apiService = OutletApiService(baseUrl: apiBaseUrl);
-void main() async {
   await _initializeHive();
   Hive.registerAdapter(DiscountModelAdapter()); // Register the adapter
   Hive.registerAdapter(ServiceChargeModelAdapter()); // Register the new model
